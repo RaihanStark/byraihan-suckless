@@ -1,0 +1,6 @@
+byraihan-suckless
+*.swp
+*~
+.DS_Store
+.idea/
+.vscode/

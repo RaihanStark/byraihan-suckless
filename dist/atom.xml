@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Raihan Yudo Saputra</title>
+  <subtitle>Blogs</subtitle>
+  <link href="https://byraihan.com/atom.xml" rel="self"/>
+  <link href="https://byraihan.com/"/>
+  <updated>2026-05-22T00:00:00Z</updated>
+  <id>https://byraihan.com/</id>
+  <author>
+    <name>Raihan Yudo Saputra</name>
+    <email>raihan@raihansoftware.com</email>
+  </author>
+  <entry>
+    <id>https://byraihan.com/post/2026/i-ve-been-absent-from-coding-for-3-months/</id>
+    <title>I've been absent from coding for 3 months</title>
+    <link href="https://byraihan.com/post/2026/i-ve-been-absent-from-coding-for-3-months/"/>
+    <updated>2026-05-22T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <id>https://byraihan.com/post/2025/i-wanted-to-contribute-to-open-source/</id>
+    <title>I wanted to contribute to open source</title>
+    <link href="https://byraihan.com/post/2025/i-wanted-to-contribute-to-open-source/"/>
+    <updated>2025-07-18T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <id>https://byraihan.com/post/2025/airpods-pro-is-the-best-investment/</id>
+    <title>AirPods Pro is the best investment</title>
+    <link href="https://byraihan.com/post/2025/airpods-pro-is-the-best-investment/"/>
+    <updated>2025-03-23T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <id>https://byraihan.com/post/2025/cursor-ai-is-amazing/</id>
+    <title>Cursor AI is amazing!</title>
+    <link href="https://byraihan.com/post/2025/cursor-ai-is-amazing/"/>
+    <updated>2025-03-19T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <id>https://byraihan.com/post/2025/how-to-get-a-job-if-you-don-t-have-a-degree/</id>
+    <title>How to get a job if you don't have a degree</title>
+    <link href="https://byraihan.com/post/2025/how-to-get-a-job-if-you-don-t-have-a-degree/"/>
+    <updated>2025-01-02T00:00:00Z</updated>
+  </entry>
+</feed>

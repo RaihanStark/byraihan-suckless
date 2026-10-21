@@ -1,0 +1,51 @@
+<table>
+  <thead>
+    <tr>
+      <th>Metric / Resource</th>
+      <th>Size</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>JavaScript (Total)</strong></td>
+      <td><code>0 B</code></td>
+      <td>100% zero client-side scripts</td>
+    </tr>
+    <tr>
+      <td><strong>Stylesheet (<code>style.css</code>)</strong></td>
+      <td><code>{{.CSSSize}}</code></td>
+      <td>Shared across all {{.PageCount}} pages</td>
+    </tr>
+    <tr>
+      <td><strong>Vector Favicon (<code>favicon.svg</code>)</strong></td>
+      <td><code>{{.FavSize}}</code></td>
+      <td>Inline SVG monogram</td>
+    </tr>
+    <tr>
+      <td><strong>Homepage (<code>/</code> total transfer)</strong></td>
+      <td><code>{{.HomeTotal}}</code></td>
+      <td>Includes HTML ({{.HomeHTML}}) + CSS + Favicon + compressed avatar ({{.AvatarSize}})</td>
+    </tr>
+    <tr>
+      <td><strong>All {{.PageCount}} HTML Pages Combined</strong></td>
+      <td><code>{{.TotalHTML}}</code></td>
+      <td>Average <code>{{.AvgHTML}}</code> per HTML document</td>
+    </tr>
+    <tr>
+      <td><strong>Entire Site (Code + Text + Feed)</strong></td>
+      <td><code>{{.TotalTextSite}}</code></td>
+      <td>All {{.PageCount}} HTML pages + CSS + SVG + Atom RSS feed</td>
+    </tr>
+    <tr>
+      <td><strong>All {{.ImgCount}} Images (Auto-Compressed)</strong></td>
+      <td><code>{{.CompImg}}</code></td>
+      <td>Reduced by <strong>{{.SavedPct}}</strong> from {{.RawImg}} raw images</td>
+    </tr>
+    <tr>
+      <td><strong>Entire Website Total (Everything)</strong></td>
+      <td><code>{{.TotalFullSite}}</code></td>
+      <td>All {{.PageCount}} pages + all {{.ImgCount}} images + assets combined</td>
+    </tr>
+  </tbody>
+</table>

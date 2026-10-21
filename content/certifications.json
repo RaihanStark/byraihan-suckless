@@ -1,0 +1,13 @@
+[
+  {
+    "id": "testing-fundamentals",
+    "title": "Testing Fundamentals",
+    "issuer": "Frontend Masters",
+    "date": "2025-07-21",
+    "year": "2025",
+    "credentialId": "f8cbc10c4f-fpKAkoKlbq",
+    "verificationUrl": "https://static.frontendmasters.com/ud/c/f8cbc10c4f/fpKAkoKlbq/testing.pdf",
+    "skills": ["Unit Testing", "Integration Testing", "Test-Driven Development", "Testing Library", "E2E Testing"],
+    "image": "/images/certifications/testing-fundamental.png"
+  }
+]

@@ -1,0 +1,93 @@
+---
+title: Local Caddie: Caddie Booking Application
+shortTitle: Local Caddie
+slug: local-caddie
+homeDesc: caddie booking web application
+listDesc: AirBnB-like caddie booking and golf course management platform
+meta: Client: Local Caddie
+description: AirBnB-like caddie booking and golf course management platform
+---
+
+<img src="/images/projects/local-caddie/caddie.png" alt="Local Caddie Application" loading="lazy" decoding="async">
+
+      <h2>Introduction</h2>
+      <p>
+        An AirBnB-like web application for booking caddie with ease for your golfing needs and booking management for golf course. The project focused on Scotland Golfing Market. They also gave me privilege to do it with whatever stacks I want.
+      </p>
+
+      <h2>Key Features</h2>
+
+      <h3>For Golfers</h3>
+      <ul>
+        <li><strong>Easy Caddie Search</strong>: Find and book experienced caddies based on location, availability, and ratings</li>
+        <li><strong>Profile Reviews</strong>: Read reviews and ratings from other golfers</li>
+        <li><strong>Instant Booking</strong>: Book caddies instantly or request bookings for future dates</li>
+        <li><strong>Secure Payments</strong>: Pay securely through Stripe integration</li>
+      </ul>
+
+      <h3>For Golf Courses</h3>
+      <ul>
+        <li><strong>Booking Management</strong>: Comprehensive dashboard for managing caddie bookings</li>
+        <li><strong>Caddie Profiles</strong>: Manage caddie profiles and availability</li>
+        <li><strong>Calendar Integration</strong>: Full calendar view for booking management</li>
+      </ul>
+
+      <h3>Platform Features</h3>
+      <ul>
+        <li><strong>Server Components</strong>: Built with Next.js 13+ App Router for optimal performance</li>
+        <li><strong>Type Safety</strong>: Full TypeScript implementation for reliability</li>
+        <li><strong>Email Verification</strong>: Custom SMTP integration for user verification</li>
+        <li><strong>Onboarding Guide</strong>: Intuitive onboarding process for new users</li>
+        <li><strong>Responsive Design</strong>: Works seamlessly on desktop and mobile devices</li>
+      </ul>
+
+      <h2>Technology Stack</h2>
+
+      <h3>Frontend</h3>
+      <ul>
+        <li><strong>TypeScript</strong> - Type-safe development</li>
+        <li><strong>React.js</strong> - UI component library</li>
+        <li><strong>Next.js 13+</strong> - Server components and app router</li>
+        <li><strong>Material UI</strong> - Component library</li>
+        <li><strong>Tailwind CSS</strong> - Utility-first CSS framework</li>
+        <li><strong>Full Calendar</strong> - Calendar integration for bookings</li>
+      </ul>
+
+      <h3>Backend &amp; Infrastructure</h3>
+      <ul>
+        <li><strong>Strapi JS</strong> - Headless CMS for content management</li>
+        <li><strong>PostgreSQL</strong> - Database for storing application data</li>
+        <li><strong>AWS S3</strong> - File storage for images and documents</li>
+        <li><strong>Heroku</strong> - Cloud platform hosting</li>
+      </ul>
+
+      <h3>Integrations</h3>
+      <ul>
+        <li><strong>Stripe API</strong> - Payment processing</li>
+        <li><strong>Axios</strong> - HTTP client for API requests</li>
+        <li><strong>Custom SMTP</strong> - Email verification system</li>
+        <li><strong>ESLint</strong> - Code quality and consistency</li>
+      </ul>
+
+      <h2>Screenshots</h2>
+      <img src="/images/projects/local-caddie/caddie-1.png" alt="Caddie Search Interface" loading="lazy" decoding="async">
+      <img src="/images/projects/local-caddie/caddie-2.png" alt="Booking Management Dashboard" loading="lazy" decoding="async">
+      <img src="/images/projects/local-caddie/caddie-3.png" alt="Calendar Booking View" loading="lazy" decoding="async">
+      <img src="/images/projects/local-caddie/caddie-4.png" alt="Caddie Profile Page" loading="lazy" decoding="async">
+      <img src="/images/projects/local-caddie/caddie-5.png" alt="Payment Integration" loading="lazy" decoding="async">
+      <img src="/images/projects/local-caddie/caddie-6.png" alt="Mobile Responsive View" loading="lazy" decoding="async">
+      <img src="/images/projects/local-caddie/caddie-7.png" alt="User Onboarding Flow" loading="lazy" decoding="async">
+
+      <h2>Impact</h2>
+      <p>
+        Local Caddie revolutionized the way golfers book caddies in Scotland, providing a seamless platform that connects golfers with experienced local caddies. The platform successfully:
+      </p>
+      <ul>
+        <li>Streamlined the caddie booking process for thousands of golfers</li>
+        <li>Provided golf courses with efficient booking management tools</li>
+        <li>Created new income opportunities for local caddies</li>
+        <li>Enhanced the overall golfing experience in Scotland's prestigious golf courses</li>
+      </ul>
+      <p>
+        The combination of modern technology stack with user-friendly design resulted in high user satisfaction and rapid adoption across Scotland's golfing community.
+      </p>

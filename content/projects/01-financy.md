@@ -1,0 +1,123 @@
+---
+title: Financy: Zero-Based Budgeting App
+shortTitle: Financy
+slug: financy
+homeDesc: local-first zero-based budgeting app
+listDesc: open-source, local-first zero-based budgeting app built on double-entry accounting
+meta: Personal Project · Open Source
+description: open-source, local-first zero-based budgeting app built on double-entry accounting
+---
+
+<img src="/images/projects/financy/financy.png" alt="Financy zero-based budget screen with Ready to Assign and category envelopes" loading="lazy" decoding="async">
+
+      <h2>Introduction</h2>
+      <p>
+        Financy is an open-source <strong>zero-based budgeting (ZBB)</strong> app for desktop and mobile - give every dollar a job. You assign every unit of money to a category until <em>Ready to Assign</em> hits zero, then watch your envelopes through the month.
+      </p>
+      <p>
+        Underneath, it's <strong>real double-entry accounting</strong>: every transaction is a set of balanced postings that sum to zero, so your budget, account balances, and net worth are all derived from a single journal and can never drift out of balance.
+      </p>
+      <p>
+        It's also radically <strong>local-first and private</strong>. Your data lives in a single <code>.financy</code> file you own - no cloud, no account, no tracking - and can optionally be protected with strong password encryption so even the file on disk is unreadable without your passphrase.
+      </p>
+
+      <h2>Why I Built It</h2>
+      <p>
+        Most budgeting apps are subscription SaaS products that hold your financial data hostage in someone else's cloud. I wanted the rigor of a proper envelope-budgeting tool (in the spirit of YNAB) with the ownership model of a plain file on my disk: open format, no account, no telemetry, and encryption strong enough that I could drop the file in a synced folder without worrying.
+      </p>
+      <p>
+        I also wanted to prove the accounting core properly - money handling is exactly the kind of domain where "close enough" isn't good enough.
+      </p>
+
+      <h2>Key Features</h2>
+
+      <h3>Zero-Based Budgeting</h3>
+      <ul>
+        <li>Assign money per category each month until <strong>Ready to Assign</strong> reaches zero</li>
+        <li>Track <strong>Assigned · Activity · Available</strong> per category, with envelope balances that roll forward and overspending shown in red</li>
+        <li>One-tap quick-budget suggestions (last month's assigned/spent, 3-month average) and <strong>Auto-Assign</strong> to copy a month's plan</li>
+        <li>An honest Ready-to-Assign: a single pool drawn from real on-budget account balances, so you can never assign money you don't have</li>
+        <li><strong>Locked history</strong> - past months are view-only; a budget you've already lived through can't be rewritten</li>
+      </ul>
+
+      <h3>Real Double-Entry Accounting</h3>
+      <ul>
+        <li>Every transaction is balanced postings that sum to zero - budget, balances, and net worth are <em>derived</em>, never stored separately</li>
+        <li>Amounts are stored as integer minor units (cents) with per-currency formatting for Rp · $ · € · £ - no floating-point money, ever</li>
+        <li>Credit cards are budget-neutral the way a good ZBB tool should be: card spending depletes its envelope <em>and</em> nets against the budget</li>
+      </ul>
+
+      <h3>Debt Management</h3>
+      <ul>
+        <li><strong>BNPL/installment plans</strong>, <strong>amortizing loans</strong> (APR with proper principal-vs-interest splits, extra payments), <strong>revolving credit</strong> (limits, utilization, monthly statement review), and <strong>informal IOUs</strong></li>
+        <li>An overview dashboard with total owed, weighted average APR, projected <strong>debt-free date</strong>, and a <strong>snowball vs. avalanche</strong> payoff comparison</li>
+      </ul>
+
+      <h3>Privacy &amp; Data Ownership</h3>
+      <ul>
+        <li>Optional <strong>XChaCha20-Poly1305</strong> encryption at rest with an <strong>Argon2id</strong>-derived key - tamper-evident, decrypted only in memory, no backdoor</li>
+        <li>Each document is a self-contained <strong>SQLite</strong> file with ACID auto-save, atomic writes, append-only schema migrations, and an automatic <code>.bak</code> before any upgrade</li>
+      </ul>
+
+      <h3>Accounts, Transactions &amp; Analytics</h3>
+      <ul>
+        <li>Asset &amp; liability accounts, net-worth overview, and per-account registers with running balances</li>
+        <li>A date-grouped journal with Income / Expense / Transfer entry, live filters, search, and bulk recategorization</li>
+        <li>KPIs, income-vs-expenses, net-worth-over-time, and spending-by-category charts - all derived from the journal</li>
+      </ul>
+
+      <h3>Cross-Platform</h3>
+      <ul>
+        <li>Native desktop app for <strong>Linux, Windows, and macOS</strong>, with <code>.deb</code>/<code>.rpm</code> packages and a registered <code>.financy</code> file type</li>
+        <li>A touch-first <strong>Android</strong> UI (beta) built from the same codebase</li>
+      </ul>
+
+      <h2>Screenshots</h2>
+      <img src="/images/projects/financy/accounts.png" alt="Financy accounts and net worth overview" loading="lazy" decoding="async">
+      <img src="/images/projects/financy/transactions.png" alt="Financy transactions journal" loading="lazy" decoding="async">
+      <img src="/images/projects/financy/analytics.png" alt="Financy analytics with KPIs and charts" loading="lazy" decoding="async">
+
+      <h2>Technology Stack</h2>
+
+      <h3>Core</h3>
+      <ul>
+        <li><strong>Go</strong> - application language; the accounting core lives in a <code>core</code> package with zero UI dependencies, so all the money logic is independently testable</li>
+        <li><strong>Fyne</strong> - cross-platform native GUI (desktop + Android from one codebase)</li>
+        <li><strong>modernc.org/sqlite</strong> - pure-Go SQLite, no cgo for the database</li>
+      </ul>
+
+      <h3>Security</h3>
+      <ul>
+        <li><strong>XChaCha20-Poly1305</strong> - authenticated encryption at rest</li>
+        <li><strong>Argon2id</strong> - memory-hard key derivation from the user's passphrase</li>
+      </ul>
+
+      <h3>Engineering</h3>
+      <ul>
+        <li><strong>GitHub Actions</strong> - CI (build, vet, test) plus a scheduled <code>govulncheck</code> pass</li>
+        <li><strong>Makefile</strong> workflow - <code>make check</code>, isolated dev profiles (<code>make run-dev</code>), automated screenshot generation, and tag-triggered release packaging for all three desktop platforms</li>
+      </ul>
+
+      <h2>Engineering Highlights</h2>
+      <p>Two rules protect user data across the whole codebase:</p>
+      <ol>
+        <li><strong>Migrations are append-only</strong> - schema history is never rewritten, and older files get an automatic backup before upgrading</li>
+        <li><strong>Money stays in integer minor units</strong> - floats are banned for monetary values</li>
+      </ol>
+      <p>
+        The strict separation between the UI and the double-entry <code>core</code> package means every piece of accounting logic - envelope math, amortization schedules, credit-card neutrality - is covered by plain Go tests without touching the GUI.
+      </p>
+
+      <h2>Roadmap</h2>
+      <p>
+        The core is feature-complete and heading toward a stable <strong>v1.0</strong> (Linux as the supported install target, Windows/macOS unsigned at first). After 1.0, the plan is to grow Financy into an all-in-one finance app: a full <strong>investment tracker</strong> on the same double-entry journal, budget goals, multi-currency, an OFX/QFX importer, and an opt-in, self-hosted end-to-end-encrypted sync - never a Financy cloud account.
+      </p>
+
+      <h2>Links</h2>
+      <ul>
+        <li><strong>Website &amp; Docs</strong>: <a href="https://raihanstark.github.io/financy/" target="_blank" rel="noopener noreferrer">raihanstark.github.io/financy</a></li>
+        <li><strong>Source Code</strong>: <a href="https://github.com/RaihanStark/financy" target="_blank" rel="noopener noreferrer">github.com/RaihanStark/financy</a></li>
+      </ul>
+      <p>
+        Financy is free, MIT-licensed, and built in my spare time - stars and <a href="https://github.com/sponsors/RaihanStark" target="_blank" rel="noopener noreferrer">GitHub sponsorships</a> are hugely appreciated!
+      </p>

@@ -1,0 +1,6 @@
+<p>Earned certifications:</p>
+<ul>
+{{- range .}}
+  <li>{{.Date}} - <a href="/certification/{{.Year}}/{{.ID}}/">{{.Title}}</a> - {{.Issuer}}</li>
+{{- end}}
+</ul>

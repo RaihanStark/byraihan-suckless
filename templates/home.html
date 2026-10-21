@@ -1,0 +1,45 @@
+<p>Hey, I'm <strong>Raihan Yudo Saputra</strong>!</p>
+
+<p><img src="/images/avatar.png" alt="Raihan Yudo Saputra" class="avatar"></p>
+
+<p>I'm a self-taught software engineer with 7-8 years of experience, driven by curiosity and a love for building useful things.</p>
+
+<p><strong>Why does this website look like this?</strong> It is intentionally built with pure HTML, ~1 KB of CSS, and zero JavaScript - read <a href="/design/"><strong>Design &amp; Philosophy</strong></a>.</p>
+
+<p>For more information:</p>
+<ul>
+  <li><a href="/about/">About</a> - my background, early life, and story</li>
+  <li><a href="/blogs/">Blogs</a> - thoughts, essays, and notes</li>
+  <li><a href="/projects/">Projects</a> - open-source and client software I've built</li>
+  <li><a href="/experience/">Work Experience</a> - companies and roles over the years</li>
+  <li><a href="/certifications/">Certifications</a> - courses and credentials</li>
+  <li><a href="/uses/">Uses</a> - my ThinkPad, Arch Linux, and daily software setup</li>
+</ul>
+
+<p>Blogs (<a href="/blogs/">all</a>):</p>
+<ul>
+{{- range .RecentPosts}}
+  <li>{{.Date}} - <a href="/post/{{.Year}}/{{.Slug}}/">{{.Title}}</a></li>
+{{- end}}
+</ul>
+
+<p>Projects (<a href="/projects/">all</a>):</p>
+<ul>
+{{- range .RecentProjects}}
+  <li><a href="/project/{{.Slug}}/">{{.ShortTitle}}</a> - {{.HomeDesc}}</li>
+{{- end}}
+</ul>
+
+<p>Work experience (<a href="/experience/">all</a>):</p>
+<ul>
+{{- range .RecentExperience}}
+  <li><a href="/experience/#{{.ID}}">{{.Role}} - {{.Company}}</a> <em>({{.Location}})</em> | {{.Period}}</li>
+{{- end}}
+</ul>
+
+<p>Certifications (<a href="/certifications/">all</a>):</p>
+<ul>
+{{- range .Certifications}}
+  <li>{{.Date}} - <a href="/certification/{{.Year}}/{{.ID}}/">{{.Title}}</a> - {{.Issuer}}</li>
+{{- end}}
+</ul>

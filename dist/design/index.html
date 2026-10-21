@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design &amp; Philosophy - Raihan Yudo Saputra</title>
+  <meta name="description" content="Why this website is built with pure HTML, minimal CSS, and zero JavaScript, inspired by suckless and permacomputing principles.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.png">
+  <link rel="alternate" type="application/atom+xml" title="Raihan Yudo Saputra" href="/atom.xml">
+  <link rel="stylesheet" href="/style.css" type="text/css">
+</head>
+<body>
+<div class="page">
+
+<div class="pageheader">
+<div class="header">
+<span>
+<span class="parentlinks"><a href="/">home</a>/ </span>
+<span class="title">design</span>
+</span>
+</div>
+</div>
+
+<div id="pagebody">
+<div id="content" role="main">
+<p>This website is intentionally built with <strong>pure HTML, ~1 KB of vanilla CSS, and zero JavaScript</strong>. Its visual design and underlying philosophy are directly inspired by <a href="https://permacomputing.net/" target="_blank" rel="noopener noreferrer">permacomputing.net</a> and the <a href="https://suckless.org/philosophy/" target="_blank" rel="noopener noreferrer">suckless philosophy</a>.</p>
+<h2>Live Site Weight Breakdown</h2>
+<p>These numbers are automatically calculated at build time by a zero-dependency Go static generator (<code>main.go</code>):</p>
+<table>
+  <thead>
+    <tr>
+      <th>Metric / Resource</th>
+      <th>Size</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>JavaScript (Total)</strong></td>
+      <td><code>0 B</code></td>
+      <td>100% zero client-side scripts</td>
+    </tr>
+    <tr>
+      <td><strong>Stylesheet (<code>style.css</code>)</strong></td>
+      <td><code>1.4 KB</code></td>
+      <td>Shared across all 22 pages</td>
+    </tr>
+    <tr>
+      <td><strong>Vector Favicon (<code>favicon.svg</code>)</strong></td>
+      <td><code>298 B</code></td>
+      <td>Inline SVG monogram</td>
+    </tr>
+    <tr>
+      <td><strong>Homepage (<code>/</code> total transfer)</strong></td>
+      <td><code>26.7 KB</code></td>
+      <td>Includes HTML (3.5 KB) + CSS + Favicon + compressed avatar (21.6 KB)</td>
+    </tr>
+    <tr>
+      <td><strong>All 22 HTML Pages Combined</strong></td>
+      <td><code>98.8 KB</code></td>
+      <td>Average <code>4.5 KB</code> per HTML document</td>
+    </tr>
+    <tr>
+      <td><strong>Entire Site (Code + Text + Feed)</strong></td>
+      <td><code>102.4 KB</code></td>
+      <td>All 22 HTML pages + CSS + SVG + Atom RSS feed</td>
+    </tr>
+    <tr>
+      <td><strong>All 33 Images (Auto-Compressed)</strong></td>
+      <td><code>1.86 MB</code></td>
+      <td>Reduced by <strong>90.2%</strong> from 19.04 MB raw images</td>
+    </tr>
+    <tr>
+      <td><strong>Entire Website Total (Everything)</strong></td>
+      <td><code>1.96 MB</code></td>
+      <td>All 22 pages + all 33 images + assets combined</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Why Ditch Modern Frameworks for a Personal Site?</h2>
+<p>This site used to run on Next.js, React, and Tailwind CSS. While modern frameworks are great when building complex web applications at work, shipping hundreds of kilobytes of JavaScript runtime just to render static text and a few links on a personal website felt completely backward.</p>
+<p>Every dependency, build step, and client-side script adds fragility. Years later, you come back to write a simple blog post and end up fighting broken node modules, deprecated packages, and build errors instead of writing.</p>
+<h2>Core Principles of This Site</h2>
+<ul>
+  <li><strong>Zero JavaScript (<code>0 KB</code>)</strong> - No hydration, no virtual DOM, no client-side routing, and no analytics or tracking scripts. The browser parses HTML and paints text immediately.</li>
+  <li><strong>Tiny Stylesheet (<code>~1 KB</code>)</strong> - A single <a href="/style.css">style.css</a> file provides readable line width (<code>41em</code>), spacing, and link colors.</li>
+  <li><strong>No Web Fonts or External Requests</strong> - Uses fonts already installed on your operating system, eliminating layout shifts and third-party network requests.</li>
+  <li><strong>Zero-Dependency Static Generator</strong> - Built with a single Go standard-library file (<code>main.go</code>) that compiles Markdown, compresses images to fit the <code>41em</code> column, and calculates exact page weights in milliseconds.</li>
+  <li><strong>Hardware &amp; Network Respect</strong> - Pages weigh only a few kilobytes, loading instantaneously even on slow 2G connections, old hardware, or text-based browsers like <code>w3m</code>, <code>lynx</code>, and <code>elinks</code>.</li>
+  <li><strong>Longevity</strong> - Plain HTML written today will still work in 20 years without needing a single security patch or dependency upgrade.</li>
+</ul>
+<h2>Inspiration</h2>
+<ul>
+  <li><a href="https://permacomputing.net/" target="_blank" rel="noopener noreferrer">Permacomputing</a> - resilience, frugality, and longevity in computing technology</li>
+  <li><a href="https://suckless.org/" target="_blank" rel="noopener noreferrer">suckless.org</a> - software that sucks less through simplicity, clarity, and frugality</li>
+  <li><a href="https://100r.co/" target="_blank" rel="noopener noreferrer">100 Rabbits</a> - offline-first, low-power, resilient tools and digital minimalism</li>
+  <li><a href="https://jeffhuang.com/designed_to_last/" target="_blank" rel="noopener noreferrer">This Page is Designed to Last</a> - a manifesto for preserving content on the web using plain HTML</li>
+  <li><a href="https://solar.lowtechmagazine.com/" target="_blank" rel="noopener noreferrer">Low-Tech Magazine</a> - radically lightweight, solar-powered web publishing</li>
+  <li><a href="https://motherfuckingwebsite.com/" target="_blank" rel="noopener noreferrer">Motherfucking Website</a> &amp; <a href="http://bettermotherfuckingwebsite.com/" target="_blank" rel="noopener noreferrer">Better Motherfucking Website</a> - a reminder that HTML is naturally fast, responsive, and readable</li>
+  <li><a href="https://no-js.club/" target="_blank" rel="noopener noreferrer">No-JS Club</a>, <a href="https://250kb.club/" target="_blank" rel="noopener noreferrer">250KB Club</a> &amp; <a href="https://512kb.club/" target="_blank" rel="noopener noreferrer">512KB Club</a> - directories of ultra-lightweight, JavaScript-free websites</li>
+  <li><a href="http://cat-v.org/" target="_blank" rel="noopener noreferrer">cat-v.org</a> - Unix philosophy and anti-bloat software culture</li>
+</ul>
+
+</div>
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+<div id="pageinfo">
+<div class="bottom_menu">
+Raihan Yudo Saputra | <a href="/atom.xml">RSS</a>
+</div>
+<div class="last_edit">Page: 8.4 KB · Site: 103.9 KB (all 22 pages + 33 images: 1.96 MB) · 0 KB JS</div>
+</div>
+</div>
+
+</div>
+</body>
+</html>

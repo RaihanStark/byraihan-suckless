@@ -1,0 +1,80 @@
+[
+  {
+    "id": "garde",
+    "role": "Software Engineer",
+    "company": "Garde",
+    "location": "New York, US · Remote",
+    "period": "May 2025 – Present",
+    "highlights": [
+      "Architected and delivered modern restaurant management and scheduling web applications using <strong>React, Vue.js, SvelteKit, Vite, and Go</strong>.",
+      "Engineered responsive, low-latency user interfaces and reusable component systems, improving daily workflow speed for restaurant operators.",
+      "Collaborated closely with product, design, and backend teams to ship production features rapidly while maintaining high code quality."
+    ]
+  },
+  {
+    "id": "raihan-software",
+    "role": "Software Engineer",
+    "company": "Raihan Software",
+    "location": "Newark, DE, US · Remote",
+    "period": "Dec 2023 – Present",
+    "highlights": [
+      "Founded an independent software engineering consultancy delivering end-to-end full-stack SaaS platforms and web apps for international SMB clients.",
+      "Architected and shipped <strong>Projectic</strong> (team task management SaaS), <a href=\"/project/youraibase/\"><strong>YourAIBase</strong></a> (AI discovery platform), and <a href=\"/project/local-caddie/\"><strong>Local Caddie</strong></a> (booking marketplace).",
+      "Owned the complete delivery lifecycle including system architecture, database schema design, Stripe payment integration, and cloud deployment."
+    ]
+  },
+  {
+    "id": "tradelanes",
+    "role": "Software Engineer",
+    "company": "TradeLanes",
+    "location": "California, US · Remote",
+    "period": "Apr 2024 – Jan 2025",
+    "highlights": [
+      "Engineered resilient web scrapers, crawlers, and browser automation pipelines using <strong>Python, Node.js, TypeScript, and Playwright</strong>.",
+      "Automated complex vessel booking and schedule documentation workflows across global shipping carriers (<strong>Maersk, CMA-CGM, Hapag-Lloyd, MSC, ONE</strong>), eliminating manual data entry and ensuring high data accuracy."
+    ]
+  },
+  {
+    "id": "spe-solution",
+    "role": "Front-End Engineer",
+    "company": "SPE Solution",
+    "location": "Tangerang Selatan, Indonesia",
+    "period": "May 2022 – Dec 2023",
+    "highlights": [
+      "Developed enterprise-grade web applications for a <strong>Financial Banking System</strong> and a <strong>WhatsApp Business Solution Provider</strong> using <strong>Next.js, Nuxt.js, React, and TypeScript</strong> within a 200+ employee fintech organization.",
+      "Designed and implemented fine-grained Role-Based Access Control (<strong>RBAC</strong>) using <strong>CASL</strong> and custom React hooks to meet strict financial security compliance.",
+      "Built end-to-end internationalization (<strong>i18n</strong>) architecture from scratch, managed complex state with <strong>Redux</strong>, and enforced Airbnb ESLint/Prettier standards across a large cross-functional engineering team."
+    ]
+  },
+  {
+    "id": "ajita",
+    "role": "Frontend Developer",
+    "company": "PT Ajita Indonesia",
+    "location": "Jakarta, Indonesia",
+    "period": "Mar 2020 – Oct 2021",
+    "highlights": [
+      "Built high-traffic interactive marketing campaign platforms and customer loyalty web applications (including the <a href=\"/project/mldspot/\"><strong>MLDSpot Loyalty Program</strong></a>) using <strong>React.js, JavaScript (ES6+), jQuery, HTML5, and CSS3</strong>.",
+      "Developed an internal Instagram platform administration dashboard with <strong>Python</strong> and collaborated with UI/UX and backend engineers to ensure cross-browser compatibility and mobile responsiveness."
+    ]
+  },
+  {
+    "id": "raven-restocks",
+    "role": "Software Engineer",
+    "company": "Raven Restocks",
+    "location": "London, UK · Remote",
+    "period": "Feb 2019 – Jan 2020",
+    "highlights": [
+      "Designed and launched full-stack SaaS web applications and high-concurrency sneaker investment automation bots from the ground up using <strong>Python, Django, Flask, PostgreSQL, Redis, Selenium, and Discord Webhooks</strong>."
+    ]
+  },
+  {
+    "id": "juliana-jaya",
+    "role": "Software Engineer",
+    "company": "Juliana Jaya",
+    "location": "Jakarta, Indonesia",
+    "period": "Jan 2018 – Feb 2019",
+    "highlights": [
+      "Spearheaded the company's digital transformation by designing, building, and launching its first web platform using <strong>React.js and modern web technologies</strong>, establishing online acquisition channels and driving revenue growth."
+    ]
+  }
+]

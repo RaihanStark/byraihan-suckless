@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{.Title}}</title>
+  <meta name="description" content="{{.Description}}">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.png">
+  <link rel="alternate" type="application/atom+xml" title="Raihan Yudo Saputra" href="/atom.xml">
+  <link rel="stylesheet" href="/style.css" type="text/css">
+</head>
+<body>
+<div class="page">
+
+<div class="pageheader">
+<div class="header">
+<span>
+<span class="parentlinks">{{.ParentLinks}}</span>
+<span class="title">{{.HeaderTitle}}</span>
+</span>
+</div>
+</div>
+
+<div id="pagebody">
+<div id="content" role="main">
+{{.Body}}
+</div>
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+<div id="pageinfo">
+<div class="bottom_menu">
+Raihan Yudo Saputra | <a href="/atom.xml">RSS</a>
+</div>
+<div class="last_edit">__PAGE_WEIGHT_INFO__</div>
+</div>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Raihan Yudo Saputra</title>
+  <subtitle>Blogs</subtitle>
+  <link href="https://byraihan.com/atom.xml" rel="self"/>
+  <link href="https://byraihan.com/"/>
+  <updated>{{.Updated}}</updated>
+  <id>https://byraihan.com/</id>
+  <author>
+    <name>Raihan Yudo Saputra</name>
+    <email>raihan@raihansoftware.com</email>
+  </author>
+{{- range .Posts}}
+  <entry>
+    <id>https://byraihan.com/post/{{.Year}}/{{.Slug}}/</id>
+    <title>{{.Title}}</title>
+    <link href="https://byraihan.com/post/{{.Year}}/{{.Slug}}/"/>
+    <updated>{{.Date}}T00:00:00Z</updated>
+  </entry>
+{{- end}}
+</feed>

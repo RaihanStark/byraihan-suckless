@@ -1,0 +1,6 @@
+<p>Posts and notes in reverse chronological order:</p>
+<ul>
+{{- range .}}
+  <li>{{.Date}} - <a href="/post/{{.Year}}/{{.Slug}}/">{{.Title}}</a></li>
+{{- end}}
+</ul>

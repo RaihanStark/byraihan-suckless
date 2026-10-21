@@ -1,0 +1,6 @@
+<p>A selection of open-source and client projects I have built over the years. You can find more on my <a href="https://github.com/RaihanStark">GitHub profile</a>.</p>
+<ul>
+{{- range .}}
+  <li><a href="/project/{{.Slug}}/">{{.ShortTitle}}</a> - {{.ListDesc}}</li>
+{{- end}}
+</ul>

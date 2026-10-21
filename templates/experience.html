@@ -1,0 +1,8 @@
+{{- range .}}
+<p id="{{.ID}}"><strong>{{.Role}}</strong> - <strong>{{.Company}}</strong> <em>({{.Location}})</em> | <code>{{.Period}}</code></p>
+<ul>
+{{- range .Highlights}}
+  <li>{{. | safeHTML}}</li>
+{{- end}}
+</ul>
+{{end -}}
