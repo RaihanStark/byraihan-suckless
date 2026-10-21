@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#ffffff" stroke="#000000" stroke-width="4"/>
-  <text x="32" y="47" font-family="Ubuntu, Trebuchet MS, sans-serif" font-size="44" font-weight="bold" text-anchor="middle" fill="#EE4AFE">r</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="#fff" stroke="#000" stroke-width="4"/><text x="32" y="47" fill="#EE4AFE" font-family="Ubuntu, Trebuchet MS, sans-serif" font-size="44" font-weight="bold" text-anchor="middle">r</text></svg>
