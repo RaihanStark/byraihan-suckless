@@ -59,6 +59,12 @@ a:visited {
   color: #EE4AFE;
 }
 
+h1.title {
+  display: inline;
+  font: inherit;
+  margin: 0;
+}
+
 div.header, header.header {
   margin: 0;
   font-size: 2.5rem;

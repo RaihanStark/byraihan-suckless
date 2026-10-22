@@ -2,15 +2,21 @@ package main
 
 import (
 	"fmt"
+	"image"
+	_ "image/jpeg"
+	_ "image/png"
 	"io"
 	"os"
 	"os/exec"
 	"path/filepath"
+	"regexp"
 	"strings"
 )
 
+var imgTagRe = regexp.MustCompile(`<img\b[^>]*>`)
+
 func buildStaticAndImages(staticDir, distDir string) (int64, int64, int, error) {
-	for _, f := range []string{"style.css", "favicon.svg", "favicon.png", "favicon.ico"} {
+	for _, f := range []string{"style.css", "favicon.svg", "favicon.png", "favicon.ico", "robots.txt"} {
 		if err := copyFile(filepath.Join(staticDir, f), filepath.Join(distDir, f)); err != nil {
 			return 0, 0, 0, err
 		}
@@ -89,4 +95,33 @@ func copyFile(src, dst string) error {
 	defer out.Close()
 	_, err = io.Copy(out, in)
 	return err
+}
+
+func injectImageDimensions(distDir, htmlContent string) string {
+	return imgTagRe.ReplaceAllStringFunc(htmlContent, func(tag string) string {
+		if strings.Contains(tag, "width=") {
+			return tag
+		}
+		m := imgSrcRe.FindStringSubmatch(tag)
+		if len(m) < 2 {
+			return tag
+		}
+		src := m[1]
+		var w, h int
+		if strings.HasSuffix(src, "/avatar.png") {
+			w, h = 140, 140
+		} else {
+			f, err := os.Open(filepath.Join(distDir, strings.TrimPrefix(src, "/")))
+			if err != nil {
+				return tag
+			}
+			cfg, _, err := image.DecodeConfig(f)
+			f.Close()
+			if err != nil {
+				return tag
+			}
+			w, h = cfg.Width, cfg.Height
+		}
+		return fmt.Sprintf(`%s width="%d" height="%d">`, strings.TrimSuffix(tag, ">"), w, h)
+	})
 }

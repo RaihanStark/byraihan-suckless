@@ -6,8 +6,11 @@ import (
 	"html/template"
 	"os"
 	"path/filepath"
+	"strings"
 	texttemplate "text/template"
 )
+
+const siteBaseURL = "https://byraihan.com"
 
 func main() {
 	if err := run(); err != nil {
@@ -52,6 +55,8 @@ func run() error {
 	}
 
 	var generatedPages []string
+	var sitemapEntries []SitemapEntry
+
 	renderTemplate := func(name string, data any) (template.HTML, error) {
 		var buf bytes.Buffer
 		if err := tmpl.ExecuteTemplate(&buf, name, data); err != nil {
@@ -65,6 +70,27 @@ func run() error {
 		if err := os.MkdirAll(filepath.Dir(outPath), 0755); err != nil {
 			return err
 		}
+
+		urlPath := "/" + strings.TrimSuffix(filepath.ToSlash(relPath), "index.html")
+		data.Canonical = siteBaseURL + urlPath
+		bodyStr := injectImageDimensions(distDir, string(data.Body))
+		data.Body = template.HTML(bodyStr)
+		data.HasH1 = strings.Contains(bodyStr, "<h1")
+
+		if data.OGType == "" {
+			if strings.Contains(bodyStr, "<article>") {
+				data.OGType = "article"
+			} else {
+				data.OGType = "website"
+			}
+		}
+		data.OGImage = siteBaseURL + "/images/avatar.png"
+		data.TwitterCard = "summary"
+		if m := imgSrcRe.FindStringSubmatch(bodyStr); len(m) >= 2 && !strings.HasSuffix(m[1], "/avatar.png") {
+			data.OGImage = siteBaseURL + m[1]
+			data.TwitterCard = "summary_large_image"
+		}
+
 		var buf bytes.Buffer
 		if err := tmpl.ExecuteTemplate(&buf, "layout.html", data); err != nil {
 			return err
@@ -73,6 +99,10 @@ func run() error {
 			return err
 		}
 		generatedPages = append(generatedPages, outPath)
+		sitemapEntries = append(sitemapEntries, SitemapEntry{
+			Loc:     data.Canonical,
+			LastMod: data.LastMod,
+		})
 		return nil
 	}
 
@@ -142,7 +172,7 @@ func run() error {
 			return err
 		}
 		if err := writePage(filepath.Join("post", p.Year, p.Slug, "index.html"), PageData{
-			Title: p.Title + " - Raihan Yudo Saputra", Description: p.Description,
+			Title: p.Title + " - Raihan Yudo Saputra", Description: p.Description, LastMod: p.Date,
 			ParentLinks: `<a href="/">home</a>/ <a href="/blogs/">blogs</a>/ `, HeaderTitle: p.Slug, Body: body,
 		}); err != nil {
 			return err
@@ -173,24 +203,32 @@ func run() error {
 		return err
 	}
 	if err := writePage(filepath.Join("certification", certMeta["year"], certMeta["slug"], "index.html"), PageData{
-		Title: certMeta["title"] + " - Raihan Yudo Saputra", Description: certMeta["description"],
+		Title: certMeta["title"] + " - Raihan Yudo Saputra", Description: certMeta["description"], LastMod: certMeta["date"],
 		ParentLinks: `<a href="/">home</a>/ <a href="/certifications/">certifications</a>/ `, HeaderTitle: certMeta["slug"], Body: certPageBody,
 	}); err != nil {
 		return err
 	}
 
-	// 5. Atom Feed
-	atomTmpl, err := texttemplate.ParseFiles("templates/atom.xml")
+	// 5. Atom Feed & Sitemap
+	atomTmpl, err := texttemplate.ParseFiles("templates/atom.xml", "templates/sitemap.xml")
 	if err != nil {
 		return err
 	}
 	var atomBuf bytes.Buffer
-	if err := atomTmpl.Execute(&atomBuf, map[string]any{
+	if err := atomTmpl.ExecuteTemplate(&atomBuf, "atom.xml", map[string]any{
 		"Updated": posts[0].Date + "T00:00:00Z", "Posts": posts,
 	}); err != nil {
 		return err
 	}
 	if err := os.WriteFile(filepath.Join(distDir, "atom.xml"), atomBuf.Bytes(), 0644); err != nil {
+		return err
+	}
+
+	var sitemapBuf bytes.Buffer
+	if err := atomTmpl.ExecuteTemplate(&sitemapBuf, "sitemap.xml", sitemapEntries); err != nil {
+		return err
+	}
+	if err := os.WriteFile(filepath.Join(distDir, "sitemap.xml"), sitemapBuf.Bytes(), 0644); err != nil {
 		return err
 	}
 

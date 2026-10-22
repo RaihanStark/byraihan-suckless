@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Design &amp; Philosophy - Raihan Yudo Saputra</title>
   <meta name="description" content="Why this website is built with pure HTML, minimal CSS, and zero JavaScript, inspired by suckless and permacomputing principles.">
+  <link rel="canonical" href="https://byraihan.com/design/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Design &amp; Philosophy - Raihan Yudo Saputra">
+  <meta property="og:description" content="Why this website is built with pure HTML, minimal CSS, and zero JavaScript, inspired by suckless and permacomputing principles.">
+  <meta property="og:url" content="https://byraihan.com/design/">
+  <meta property="og:site_name" content="Raihan Yudo Saputra">
+  <meta property="og:image" content="https://byraihan.com/images/avatar.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Design &amp; Philosophy - Raihan Yudo Saputra">
+  <meta name="twitter:description" content="Why this website is built with pure HTML, minimal CSS, and zero JavaScript, inspired by suckless and permacomputing principles.">
+  <meta name="twitter:image" content="https://byraihan.com/images/avatar.png">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.png">
   <link rel="alternate" type="application/atom+xml" title="Raihan Yudo Saputra" href="/atom.xml">
@@ -13,17 +24,16 @@
 <body>
 <div class="page">
 
-<div class="pageheader">
+<header class="pageheader">
 <div class="header">
 <span>
-<span class="parentlinks"><a href="/">home</a>/ </span>
-<span class="title">design</span>
+<span class="parentlinks"><a href="/">home</a>/ </span><h1 class="title">design</h1>
 </span>
 </div>
-</div>
+</header>
 
 <div id="pagebody">
-<div id="content" role="main">
+<main id="content">
 <p>This website is intentionally built with <strong>pure HTML, ~1 KB of vanilla CSS, and zero JavaScript</strong>. Its visual design and underlying philosophy are directly inspired by <a href="https://permacomputing.net/" target="_blank" rel="noopener noreferrer">permacomputing.net</a> and the <a href="https://suckless.org/philosophy/" target="_blank" rel="noopener noreferrer">suckless philosophy</a>.</p>
 <h2>Live Site Weight Breakdown</h2>
 <p>These numbers are automatically calculated at build time by a zero-dependency Go static generator (<code>main.go</code>):</p>
@@ -43,7 +53,7 @@
     </tr>
     <tr>
       <td><strong>Stylesheet (<code>style.css</code>)</strong></td>
-      <td><code>1.4 KB</code></td>
+      <td><code>1.5 KB</code></td>
       <td>Shared across all 22 pages</td>
     </tr>
     <tr>
@@ -53,17 +63,17 @@
     </tr>
     <tr>
       <td><strong>Homepage (<code>/</code> total transfer)</strong></td>
-      <td><code>26.7 KB</code></td>
-      <td>Includes HTML (3.5 KB) + CSS + Favicon + compressed avatar (21.6 KB)</td>
+      <td><code>27.6 KB</code></td>
+      <td>Includes HTML (4.3 KB) + CSS + Favicon + compressed avatar (21.6 KB)</td>
     </tr>
     <tr>
       <td><strong>All 22 HTML Pages Combined</strong></td>
-      <td><code>98.8 KB</code></td>
-      <td>Average <code>4.5 KB</code> per HTML document</td>
+      <td><code>119.2 KB</code></td>
+      <td>Average <code>5.4 KB</code> per HTML document</td>
     </tr>
     <tr>
       <td><strong>Entire Site (Code + Text + Feed)</strong></td>
-      <td><code>102.4 KB</code></td>
+      <td><code>125.4 KB</code></td>
       <td>All 22 HTML pages + CSS + SVG + Atom RSS feed</td>
     </tr>
     <tr>
@@ -73,7 +83,7 @@
     </tr>
     <tr>
       <td><strong>Entire Website Total (Everything)</strong></td>
-      <td><code>1.96 MB</code></td>
+      <td><code>1.98 MB</code></td>
       <td>All 22 pages + all 33 images + assets combined</td>
     </tr>
   </tbody>
@@ -103,17 +113,17 @@
   <li><a href="http://cat-v.org/" target="_blank" rel="noopener noreferrer">cat-v.org</a> - Unix philosophy and anti-bloat software culture</li>
 </ul>
 
-</div>
+</main>
 </div>
 
-<div id="footer" class="pagefooter" role="contentinfo">
+<footer id="footer" class="pagefooter">
 <div id="pageinfo">
 <div class="bottom_menu">
 Raihan Yudo Saputra | <a href="/atom.xml">RSS</a>
 </div>
-<div class="last_edit">Page: 8.4 KB · Site: 103.9 KB (all 22 pages + 33 images: 1.96 MB) · 0 KB JS</div>
+<div class="last_edit">Page: 9.4 KB · Site: 126.9 KB (all 22 pages + 33 images: 1.99 MB) · 0 KB JS</div>
 </div>
-</div>
+</footer>
 
 </div>
 </body>

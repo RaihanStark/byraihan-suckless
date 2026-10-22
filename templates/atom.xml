@@ -16,6 +16,7 @@
     <title>{{.Title}}</title>
     <link href="https://byraihan.com/post/{{.Year}}/{{.Slug}}/"/>
     <updated>{{.Date}}T00:00:00Z</updated>
+    <summary>{{.Description}}</summary>
   </entry>
 {{- end}}
 </feed>

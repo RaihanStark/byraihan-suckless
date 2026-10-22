@@ -16,13 +16,15 @@ func injectSiteWeights(distDir string, pages []string, tmpl *template.Template, 
 	cssSize := fileSize(filepath.Join(distDir, "style.css"))
 	favSize := fileSize(filepath.Join(distDir, "favicon.svg"))
 	atomSize := fileSize(filepath.Join(distDir, "atom.xml"))
+	sitemapSize := fileSize(filepath.Join(distDir, "sitemap.xml"))
+	robotsSize := fileSize(filepath.Join(distDir, "robots.txt"))
 
 	var totalHTMLBytes int64
 	for _, p := range pages {
 		totalHTMLBytes += fileSize(p)
 	}
 
-	totalTextSiteBytes := totalHTMLBytes + cssSize + favSize + atomSize
+	totalTextSiteBytes := totalHTMLBytes + cssSize + favSize + atomSize + sitemapSize + robotsSize
 	totalFullSiteBytes := totalTextSiteBytes + compImgBytes
 
 	homeHTMLSize := fileSize(filepath.Join(distDir, "index.html"))
@@ -66,7 +68,7 @@ func injectSiteWeights(distDir string, pages []string, tmpl *template.Template, 
 	for _, p := range pages {
 		totalHTMLBytes += fileSize(p)
 	}
-	totalTextSiteBytes = totalHTMLBytes + cssSize + favSize + atomSize
+	totalTextSiteBytes = totalHTMLBytes + cssSize + favSize + atomSize + sitemapSize + robotsSize
 	totalFullSiteBytes = totalTextSiteBytes + compImgBytes
 
 	for _, p := range pages {

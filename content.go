@@ -12,9 +12,20 @@ import (
 type PageData struct {
 	Title       string
 	Description string
+	Canonical   string
+	OGType      string
+	OGImage     string
+	TwitterCard string
+	HasH1       bool
+	LastMod     string
 	ParentLinks template.HTML
 	HeaderTitle string
 	Body        template.HTML
+}
+
+type SitemapEntry struct {
+	Loc     string
+	LastMod string
 }
 
 type Post struct {

@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{.Title}}</title>
   <meta name="description" content="{{.Description}}">
+  <link rel="canonical" href="{{.Canonical}}">
+  <meta property="og:type" content="{{.OGType}}">
+  <meta property="og:title" content="{{.Title}}">
+  <meta property="og:description" content="{{.Description}}">
+  <meta property="og:url" content="{{.Canonical}}">
+  <meta property="og:site_name" content="Raihan Yudo Saputra">
+  <meta property="og:image" content="{{.OGImage}}">
+  <meta name="twitter:card" content="{{.TwitterCard}}">
+  <meta name="twitter:title" content="{{.Title}}">
+  <meta name="twitter:description" content="{{.Description}}">
+  <meta name="twitter:image" content="{{.OGImage}}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.png">
   <link rel="alternate" type="application/atom+xml" title="Raihan Yudo Saputra" href="/atom.xml">
@@ -13,29 +24,29 @@
 <body>
 <div class="page">
 
-<div class="pageheader">
+<header class="pageheader">
 <div class="header">
 <span>
 <span class="parentlinks">{{.ParentLinks}}</span>
-<span class="title">{{.HeaderTitle}}</span>
+{{- if .HasH1}}<span class="title">{{.HeaderTitle}}</span>{{else}}<h1 class="title">{{.HeaderTitle}}</h1>{{end}}
 </span>
 </div>
-</div>
+</header>
 
 <div id="pagebody">
-<div id="content" role="main">
+<main id="content">
 {{.Body}}
-</div>
+</main>
 </div>
 
-<div id="footer" class="pagefooter" role="contentinfo">
+<footer id="footer" class="pagefooter">
 <div id="pageinfo">
 <div class="bottom_menu">
 Raihan Yudo Saputra | <a href="/atom.xml">RSS</a>
 </div>
 <div class="last_edit">__PAGE_WEIGHT_INFO__</div>
 </div>
-</div>
+</footer>
 
 </div>
 </body>
