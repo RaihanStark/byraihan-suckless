@@ -110,7 +110,7 @@ func run() error {
 	homeBody, err := renderTemplate("home.html", map[string]any{
 		"RecentPosts":      posts[:min(3, len(posts))],
 		"RecentProjects":   projects[:min(3, len(projects))],
-		"RecentExperience": experiences[:min(3, len(experiences))],
+		"RecentExperience": experiences,
 		"Certifications":   certs,
 	})
 	if err != nil {
