@@ -125,8 +125,8 @@ func run() error {
 		return err
 	}
 
-	// 2. Standalone Markdown Pages (About, Design, Uses)
-	for _, slug := range []string{"about", "design", "uses"} {
+	// 2. Standalone Markdown Pages (About, Design, Uses, Now)
+	for _, slug := range []string{"about", "design", "uses", "now"} {
 		meta, body, err := parseContentFile(filepath.Join("content", slug+".md"))
 		if err != nil {
 			return err
